@@ -1,24 +1,26 @@
 // app/[slug]/page.tsx
-
-import StaticPage from "@/components/StaticContent";
+import StaticContent from "@/components/StaticContent";
 import Header from "../header/page";
 import Footer from "../footer/page";
 
-// Example: list all slugs at build time
+// List all slugs to generate static pages at build time
 export async function generateStaticParams() {
-  // Replace this with real slugs from API or CMS
+  // Replace with API call if needed
   const slugs = ["home", "about", "contact"];
   return slugs.map(slug => ({ slug }));
 }
 
-// params is typed as { slug: string } now
-export default function SlugPage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string };
+};
+
+export default function SlugPage({ params }: Props) {
   const { slug } = params;
 
   return (
     <>
       <Header />
-      <StaticPage slug={slug} />
+      <StaticContent slug={slug} />
       <Footer />
     </>
   );
