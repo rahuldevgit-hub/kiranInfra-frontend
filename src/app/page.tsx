@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Rupam Singh
 
 import StaticContent from "@/components/StaticContent";
 import Header from './(frontend)/header/page'
