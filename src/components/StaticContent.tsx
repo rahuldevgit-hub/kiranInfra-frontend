@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { findStaticByTitle } from "@/services/static.service";
 import Loader from "@/components/ui/loader";
